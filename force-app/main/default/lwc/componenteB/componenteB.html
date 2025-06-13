@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Beneficios" icon-name="standard:product">
+        <template if:true={benefits}>
+            <lightning-accordion allow-multiple-sections-open>
+                <template for:each={benefits} for:item="item">
+                    <lightning-accordion-section
+                        key={item.cod}
+                        name={item.cod}
+                        label={item.tituloNumerado}>
+                        <p>{item.descripcion}</p>
+                    </lightning-accordion-section>
+                </template>
+            </lightning-accordion>
+        </template>
+        <template if:false={benefits}>
+            <p class="slds-p-around_medium">No hay beneficios disponibles.</p>
+        </template>
+    </lightning-card>
+</template>
